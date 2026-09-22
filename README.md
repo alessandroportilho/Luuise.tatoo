@@ -1,7 +1,3 @@
-# luuise-ink-portfolio
-Portfólio moderno e responsivo para o estúdio de tatuagem luuise.ink. Desenvolvido com foco em UI/UX, Dark Mode e conversão para agendamentos.
-
-
 # 🖤 luuise.ink | Tattoo Studio Portfolio
 
 Um site de portfólio moderno, elegante e totalmente responsivo desenvolvido para o estúdio de tatuagem **luuise.ink**. O projeto foi criado com uma estética *Dark Mode* para destacar as fotografias e artes, proporcionando uma experiência imersiva ao usuário.
