@@ -3,7 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>luuise.ink | Tattoo Studio</title>
+    <title>luuise.ink | Tatuadora em Campo Grande, Rio de Janeiro</title>
+    <meta name="description" content="Luise, tatuadora em Campo Grande, Rio de Janeiro. Blackwork, fineline e realismo em estúdio privado, com arte exclusiva. Agende pelo WhatsApp ou Instagram.">
+    <meta name="keywords" content="tatuagem Campo Grande, tatuadora Rio de Janeiro, luuise.ink, blackwork, fineline, realismo, estúdio de tatuagem RJ">
+    <meta name="author" content="Luise — luuise.ink">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="geo.region" content="BR-RJ">
+    <meta name="geo.placename" content="Campo Grande, Rio de Janeiro">
+    <link rel="canonical" href="https://luuisetatoo.github.io/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="luuise.ink">
+    <meta property="og:title" content="luuise.ink | Tatuadora em Campo Grande, Rio de Janeiro">
+    <meta property="og:description" content="Arte na pele, eternizada. Blackwork, fineline e realismo com a Luise, em estúdio privado no Rio de Janeiro.">
+    <meta property="og:url" content="https://luuisetatoo.github.io/">
+    <meta property="og:image" content="https://luuisetatoo.github.io/preview.jpg">
+    <meta property="og:image:secure_url" content="https://luuisetatoo.github.io/preview.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Luise tatuando no estúdio luuise.ink, em Campo Grande, Rio de Janeiro">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="luuise.ink | Tatuadora em Campo Grande, Rio de Janeiro">
+    <meta name="twitter:description" content="Arte na pele, eternizada. Blackwork, fineline e realismo com a Luise.">
+    <meta name="twitter:image" content="https://luuisetatoo.github.io/preview.jpg">
+    <meta name="twitter:image:alt" content="Luise tatuando no estúdio luuise.ink, em Campo Grande, Rio de Janeiro">
+
+    <link rel="icon" type="image/png" href="lk_favicon.png">
+    <link rel="apple-touch-icon" href="lk_favicon.png">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TattooParlor",
+        "name": "luuise.ink",
+        "url": "https://luuisetatoo.github.io/",
+        "image": "https://luuisetatoo.github.io/preview.jpg",
+        "description": "Estúdio de tatuagem da Luise em Campo Grande, Rio de Janeiro. Blackwork, fineline e realismo, com arte exclusiva e material descartável.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Campo Grande",
+            "addressRegion": "RJ",
+            "addressCountry": "BR"
+        },
+        "founder": {
+            "@type": "Person",
+            "name": "Luise",
+            "jobTitle": "Tatuadora"
+        },
+        "sameAs": [
+            "https://www.instagram.com/luuise.ink/"
+        ],
+        "knowsAbout": ["Blackwork", "Fineline", "Realismo"]
+    }
+    </script>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -62,6 +118,11 @@
             opacity: 0.3;
         }
 
+        .portfolio-video {
+            background-color: #050505;
+            pointer-events: none;
+        }
+
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
@@ -76,8 +137,48 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #555;
         }
+
+        .word-rotator {
+            display: inline-grid;
+            overflow: hidden;
+            height: 1.25em;
+            line-height: 1.25;
+            vertical-align: bottom;
+            padding-inline: 0.08em;
+        }
+
+        .word-rotator__sizer,
+        .word-rotator__word {
+            grid-area: 1 / 1;
+            justify-self: center;
+            white-space: nowrap;
+        }
+
+        .word-rotator__sizer {
+            visibility: hidden;
+        }
+
+        .word-rotator__word {
+            transition: transform 0.55s cubic-bezier(0.5, 0, 0, 1), opacity 0.55s ease;
+        }
+
+        .word-rotator__word.is-leaving {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+
+        .word-rotator__word.is-entering {
+            transform: translateY(100%);
+            opacity: 0;
+            transition: none;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .word-rotator__word {
+                transition: none;
+            }
+        }
     </style>
-    <link rel="icon" type="image/png" href="lk_favicon.png">
 </head>
 <body class="antialiased overflow-x-hidden selection:bg-accent selection:text-white">
 
@@ -122,14 +223,18 @@
         <!-- Background Image with Overlay -->
         <div class="absolute inset-0 z-0">
             <!-- Usando placeholder de textura escura -->
-            <img src="tatooestudio1.png" alt="Tattoo Background" class="w-full h-full object-cover object-center opacity-40">
+            <img src="tatooestudio1.jpg" alt="Ambiente do estúdio de tatuagem luuise.ink em Campo Grande, Rio de Janeiro" class="w-full h-full object-cover object-center opacity-40">
             <div class="absolute inset-0 bg-gradient-to-b from-darker/60 via-dark/80 to-dark"></div>
         </div>
 
-        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto reveal active">
+        <div class="relative z-10 text-center px-4 w-full min-w-0 max-w-4xl mx-auto reveal active">
             <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl text-white mb-6 leading-tight">
                 Arte na Pele.<br>
-                <span class="italic text-gray-400 text-4xl md:text-6xl">Eternizada.</span>
+                <span class="sr-only">Eternizada.</span>
+                <span class="word-rotator italic text-gray-400 text-4xl md:text-6xl" aria-hidden="true">
+                    <span class="word-rotator__sizer">Eternizada.</span>
+                    <span class="word-rotator__word" id="rotating-word">Eternizada.</span>
+                </span>
             </h1>
             <p class="text-lg md:text-xl text-gray-400 mb-10 font-light tracking-wide max-w-2xl mx-auto">
                 Especialista em Blackwork, Fineline e Realismo. Transformando suas ideias em obras de arte únicas e marcantes.
@@ -152,7 +257,7 @@
                 <div class="order-2 lg:order-1 reveal">
                     <div class="relative">
                         <!-- Imagem da tatuadora (Placeholder) -->
-                        <img src="tatuadora.png" alt="Artista" class="rounded-sm shadow-2xl transition-all duration-700">
+                        <img src="tatuadora.jpg" alt="Luise, tatuadora do luuise.ink, durante uma sessão em Campo Grande" class="rounded-sm shadow-2xl transition-all duration-700">
                         <!-- Elemento decorativo -->
                         <div class="absolute -bottom-6 -right-6 w-32 h-32 border-b-2 border-r-2 border-accent hidden md:block"></div>
                     </div>
@@ -199,7 +304,7 @@
                 
                 <!-- Item 1 -->
                 <div class="portfolio-item group relative overflow-hidden aspect-[4/5] cursor-pointer rounded-sm reveal">
-                    <img src="Tatttoo 1.png" alt="Tattoo 1" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110">
+                    <video src="assets/tattoo1.mp4" class="portfolio-video w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" autoplay muted loop playsinline preload="auto" disablepictureinpicture aria-label="Vídeo de um trabalho de tatuagem de Luise, luuise.ink"></video>
                     <div class="absolute bottom-0 left-0 p-6 z-10 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                         <h3 class="font-serif text-2xl text-white"></h3>
                         <p class="text-gray-300 text-sm font-light"></p>
@@ -208,7 +313,7 @@
 
                 <!-- Item 2 -->
                 <div class="portfolio-item group relative overflow-hidden aspect-[4/5] cursor-pointer rounded-sm reveal delay-100">
-                    <img src="Tatttoo 2.png" alt="Tattoo 2" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110">
+                    <img src="Tatttoo 2.jpg" alt="Segundo trabalho do portfólio de Luise, luuise.ink" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute bottom-0 left-0 p-6 z-10 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                         <h3 class="font-serif text-2xl text-white"></h3>
                         <p class="text-gray-300 text-sm font-light"></p>
@@ -217,7 +322,7 @@
 
                 <!-- Item 3 -->
                 <div class="portfolio-item group relative overflow-hidden aspect-[4/5] cursor-pointer rounded-sm reveal delay-200">
-                    <img src="Tatttoo 3.png" alt="Tattoo 3" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110">
+                    <video src="assets/tattoo2.mp4" class="portfolio-video w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" autoplay muted loop playsinline preload="auto" disablepictureinpicture aria-label="Vídeo de um trabalho de tatuagem de Luise, luuise.ink"></video>
                     <div class="absolute bottom-0 left-0 p-6 z-10 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                         <h3 class="font-serif text-2xl text-white"></h3>
                         <p class="text-gray-300 text-sm font-light"></p>
@@ -226,7 +331,7 @@
 
                 <!-- Item 4 -->
                 <div class="portfolio-item group relative overflow-hidden aspect-[4/5] cursor-pointer rounded-sm reveal">
-                    <img src="Tatttoo 4.png" alt="Tattoo 4" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110">
+                    <video src="assets/tattoo3.mp4" class="portfolio-video w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" autoplay muted loop playsinline preload="auto" disablepictureinpicture aria-label="Vídeo de um trabalho de tatuagem de Luise, luuise.ink"></video>
                     <div class="absolute bottom-0 left-0 p-6 z-10 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                         <h3 class="font-serif text-2xl text-white"></h3>
                         <p class="text-gray-300 text-sm font-light"></p>
@@ -235,7 +340,7 @@
 
                 <!-- Item 5 -->
                 <div class="portfolio-item group relative overflow-hidden aspect-[4/5] cursor-pointer rounded-sm reveal delay-100">
-                    <img src="Tatttoo 5.png" alt="Tattoo 5" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110">
+                    <img src="Tatttoo 4.jpg" alt="Quinto trabalho do portfólio de Luise, luuise.ink" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute bottom-0 left-0 p-6 z-10 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                         <h3 class="font-serif text-2xl text-white"></h3>
                         <p class="text-gray-300 text-sm font-light"></p>
@@ -244,7 +349,7 @@
 
                 <!-- Item 6 -->
                 <div class="portfolio-item group relative overflow-hidden aspect-[4/5] cursor-pointer rounded-sm reveal delay-200">
-                    <img src="Tatttoo 6.png" alt="Tattoo 6" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110">
+                    <video src="assets/tattoo4.mp4" class="portfolio-video w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" autoplay muted loop playsinline preload="auto" disablepictureinpicture aria-label="Vídeo de um trabalho de tatuagem de Luise, luuise.ink"></video>
                     <div class="absolute bottom-0 left-0 p-6 z-10 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                         <h3 class="font-serif text-2xl text-white"></h3>
                         <p class="text-gray-300 text-sm font-light"></p>
@@ -372,6 +477,51 @@
                     revealObserver.observe(el);
                 }
             });
+
+            const rotatingWord = document.getElementById('rotating-word');
+            const rotatingWords = ['Eternizada.', 'Gravada.', 'Sentida.', 'Marcada.', 'Desenhada.', 'Única.'];
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            document.querySelectorAll('.portfolio-video').forEach((video) => {
+                video.muted = true;
+                if (reduceMotion) {
+                    video.removeAttribute('autoplay');
+                    video.pause();
+                    return;
+                }
+                const playVideo = () => {
+                    const pending = video.play();
+                    if (pending) {
+                        pending.catch(() => {});
+                    }
+                };
+                if (video.readyState >= 2) {
+                    playVideo();
+                } else {
+                    video.addEventListener('canplay', playVideo, { once: true });
+                }
+            });
+
+            if (rotatingWord && !reduceMotion) {
+                let wordIndex = 0;
+
+                const cycleWord = () => {
+                    rotatingWord.classList.add('is-leaving');
+                    window.setTimeout(() => {
+                        wordIndex = (wordIndex + 1) % rotatingWords.length;
+                        rotatingWord.textContent = rotatingWords[wordIndex];
+                        rotatingWord.classList.add('is-entering');
+                        rotatingWord.classList.remove('is-leaving');
+                        requestAnimationFrame(() => {
+                            requestAnimationFrame(() => {
+                                rotatingWord.classList.remove('is-entering');
+                            });
+                        });
+                    }, 560);
+                };
+
+                window.setInterval(cycleWord, 2800);
+            }
         });
     </script>
 </body>
