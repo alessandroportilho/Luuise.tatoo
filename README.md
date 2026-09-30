@@ -1,6 +1,6 @@
 # luuise.ink | Portfólio Oficial 🖤
 
-Repositório oficial do portfólio e site profissional da tatuadora **Luise**, localizado em Campo Grande, Rio de Janeiro - RJ[cite: 3].
+Repositório oficial do portfólio e site profissional da tatuadora **Luise**, localizado em Campo Grande, Rio de Janeiro - RJ.
 
 🌐 **Acesse o site online:** [https://luuisetatoo.github.io/](https://luuisetatoo.github.io/)
 
